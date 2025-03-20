@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Navbar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Add Google Fonts for Stylish Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* Custom Fonts */
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .logo {
+      font-family: 'Poppins', sans-serif;
+    }
+    /* Smooth Hover Animation */
+    .nav-link {
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: #4F46E5; /* Indigo-600 */
+      bottom: -2px;
+      left: 0;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+  <!-- Navbar -->
+  <nav class="bg-white shadow-lg fixed w-full z-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex justify-between items-center h-20">
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <a href="#" class="logo text-3xl font-bold text-indigo-600 hover:text-indigo-500 transition duration-300">
+            MyBrand
+          </a>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-8 items-center">
+          <a href="#" class="nav-link text-lg font-medium text-gray-700 hover:text-indigo-600">Home</a>
+          <a href="#" class="nav-link text-lg font-medium text-gray-700 hover:text-indigo-600">About</a>
+          <a href="#" class="nav-link text-lg font-medium text-gray-700 hover:text-indigo-600">Services</a>
+          <a href="#" class="nav-link text-lg font-medium text-gray-700 hover:text-indigo-600">Portfolio</a>
+          <a href="#" class="nav-link text-lg font-medium text-gray-700 hover:text-indigo-600">Contact</a>
+          <a href="#" class="px-6 py-2 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition duration-300">
+            Get Started
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <button id="menu-toggle" class="text-gray-700 hover:text-indigo-600 focus:outline-none">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+      <div class="px-4 pt-2 pb-4 space-y-2">
+        <a href="#" class="block nav-link text-lg font-medium text-gray-700 hover:text-indigo-600 transition duration-300">Home</a>
+        <a href="#" class="block nav-link text-lg font-medium text-gray-700 hover:text-indigo-600 transition duration-300">About</a>
+        <a href="#" class="block nav-link text-lg font-medium text-gray-700 hover:text-indigo-600 transition duration-300">Services</a>
+        <a href="#" class="block nav-link text-lg font-medium text-gray-700 hover:text-indigo-600 transition duration-300">Portfolio</a>
+        <a href="#" class="block nav-link text-lg font-medium text-gray-700 hover:text-indigo-600 transition duration-300">Contact</a>
+        <a href="#" class="block px-4 py-2 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition duration-300">
+          Get Started
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <div class="pt-20">
+    <div class="p-8">
+      <h1 class="text-5xl font-bold text-gray-800">Welcome to My Website</h1>
+      <p class="mt-4 text-xl text-gray-600">This is a modern, responsive, and animated navbar built with Tailwind CSS.</p>
+    </div>
+  </div>
+
+  <!-- JavaScript for Mobile Menu Toggle -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
